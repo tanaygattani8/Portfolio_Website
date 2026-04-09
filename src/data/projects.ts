@@ -22,7 +22,7 @@ export const projects: Project[] = [
       "End-to-end Airflow orchestration deployed on K8s via Helm",
     ],
     category: "Data Engineering",
-    image: "/images/project-data-platform.png",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "netflix-modeling",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     ],
     category: "Data Analytics",
     githubUrl: "https://github.com/tanaygattani8/NetflixAnalysis_Dbt_Snowflake",
-    image: "/images/project-netflix.png",
+    image: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "sales-analysis",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     ],
     category: "Data Analytics",
     githubUrl: "https://github.com/tanaygattani8/Sales_Analytics",
-    image: "/images/project-sales.png",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "corporate-sociologist",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     category: "Automation & AI",
     githubUrl:
       "https://github.com/tanaygattani8/The-Corporate-Sociologist-Multi-Agent-System",
-    image: "/images/project-agents.png",
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "ecommerce-agents",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     category: "Automation & AI",
     githubUrl:
       "https://github.com/tanaygattani8/Scalable-Agent-Collaboration-for-E-commerce",
-    image: "/images/project-agents.png",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "process-capability-agent",
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     ],
     category: "Automation & AI",
     githubUrl: "https://github.com/tanaygattani8/Process_Capability_AI_Agent",
-    image: "/images/project-agents.png",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "survey-dashboard",
@@ -114,6 +114,6 @@ export const projects: Project[] = [
     ],
     category: "Data Analytics",
     githubUrl: "https://github.com/tanaygattani8/Data_Professional_Survey_Analysis_Dashboard_Power_BI",
-    image: "/images/project-sales.png",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
   },
 ];
