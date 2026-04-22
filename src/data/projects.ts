@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   techStack: string[];
   highlights: string[];
-  category: "Data Engineering" | "Automation & AI" | "Data Analytics";
+  category: "Data Engineering" | "Automation & AI" | "Data Analytics" | "Machine Learning";
   githubUrl?: string;
   image: string;
 }
@@ -54,6 +54,53 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/tanaygattani8/Sales_Analytics",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
   },
+  // ── Slide 2: Machine Learning projects ─────────────────────────────────
+  {
+    id: "netflix-recommendation",
+    title: "Netflix Recommendation System",
+    description:
+      "A full-stack movie recommendation engine using content-based filtering and cosine similarity, with a Flask web app that scrapes live IMDB reviews and classifies them as Good or Bad using an NLP model.",
+    techStack: ["Python", "Flask", "scikit-learn", "NLP", "BeautifulSoup", "Pickle"],
+    highlights: [
+      "Content-based filtering with CountVectorizer & cosine similarity across 5,000+ titles",
+      "Live IMDB review scraping with real-time Naive Bayes sentiment classification",
+      "Deployed Flask app with TMDB API integration for full cast & movie details",
+    ],
+    category: "Machine Learning",
+    githubUrl: "https://github.com/tanaygattani8/Netflix_Recommendation_System",
+    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "amazon-sentiment",
+    title: "Amazon Review Sentiment Analysis",
+    description:
+      "End-to-end NLP pipeline that cleans and classifies 10,000+ Amazon product reviews as positive or negative using TF-IDF vectorization and machine learning classifiers.",
+    techStack: ["Python", "scikit-learn", "NLTK", "TF-IDF", "Pandas", "Seaborn"],
+    highlights: [
+      "Cleaned 10,000 raw reviews to 919 high-quality samples via aggressive filtering",
+      "TF-IDF feature engineering with lemmatization and stopword removal",
+      "Multi-model benchmarking with accuracy, precision, recall, F1, and confusion matrix",
+    ],
+    category: "Machine Learning",
+    githubUrl: "https://github.com/tanaygattani8/Amazon_Review_Sentiment_Analysis",
+    image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "survey-dashboard",
+    title: "Data Professional Survey Analysis",
+    description:
+      "Interactive Power BI dashboard analyzing data professional survey responses to uncover industry trends, salary benchmarks, and demographic distributions.",
+    techStack: ["Power BI", "Data Viz", "Survey Analysis"],
+    highlights: [
+      "Interactive filtering and drill-down capabilities",
+      "Salary benchmarking by role and experience",
+      "Demographic insights visualization",
+    ],
+    category: "Data Analytics",
+    githubUrl: "https://github.com/tanaygattani8/Data_Professional_Survey_Analysis_Dashboard_Power_BI",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+  },
+  // ── Slide 3: Automation & AI projects ────────────────────────────────────
   {
     id: "corporate-sociologist",
     title: "The Corporate Sociologist - Multi-Agent System",
@@ -100,50 +147,5 @@ export const projects: Project[] = [
     category: "Automation & AI",
     githubUrl: "https://github.com/tanaygattani8/Process_Capability_AI_Agent",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "survey-dashboard",
-    title: "Data Professional Survey Analysis",
-    description:
-      "Interactive Power BI dashboard analyzing data professional survey responses to uncover industry trends, salary benchmarks, and demographic distributions.",
-    techStack: ["Power BI", "Data Viz", "Survey Analysis"],
-    highlights: [
-      "Interactive filtering and drill-down capabilities",
-      "Salary benchmarking by role and experience",
-      "Demographic insights visualization",
-    ],
-    category: "Data Analytics",
-    githubUrl: "https://github.com/tanaygattani8/Data_Professional_Survey_Analysis_Dashboard_Power_BI",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "netflix-recommendation",
-    title: "Netflix Recommendation System",
-    description:
-      "A full-stack movie recommendation engine using content-based filtering and cosine similarity, with a Flask web app that scrapes live IMDB reviews and classifies them as Good or Bad using an NLP model.",
-    techStack: ["Python", "Flask", "scikit-learn", "NLP", "BeautifulSoup", "Pickle"],
-    highlights: [
-      "Content-based filtering with CountVectorizer & cosine similarity across 5,000+ titles",
-      "Live IMDB review scraping with real-time Naive Bayes sentiment classification",
-      "Deployed Flask app with TMDB API integration for full cast & movie details",
-    ],
-    category: "Automation & AI",
-    githubUrl: "https://github.com/tanaygattani8/Netflix_Recommendation_System",
-    image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "amazon-sentiment",
-    title: "Amazon Review Sentiment Analysis",
-    description:
-      "End-to-end NLP pipeline that cleans and classifies 10,000+ Amazon product reviews as positive or negative using TF-IDF vectorization and machine learning classifiers.",
-    techStack: ["Python", "scikit-learn", "NLTK", "TF-IDF", "Pandas", "Seaborn"],
-    highlights: [
-      "Cleaned 10,000 raw reviews to 919 high-quality samples via aggressive filtering",
-      "TF-IDF feature engineering with lemmatization and stopword removal",
-      "Multi-model benchmarking with accuracy, precision, recall, F1, and confusion matrix",
-    ],
-    category: "Data Analytics",
-    githubUrl: "https://github.com/tanaygattani8/Amazon_Review_Sentiment_Analysis",
-    image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=800&auto=format&fit=crop",
   },
 ];

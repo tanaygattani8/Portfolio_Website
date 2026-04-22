@@ -5,8 +5,8 @@ import SectionHeading from "../atoms/SectionHeading";
 import ProjectCard from "../molecules/ProjectCard";
 import { projects } from "@/data/projects";
 
-const CARDS_PER_SLIDE = 4;
-const AUTO_ADVANCE_MS = 5000;
+const CARDS_PER_SLIDE = 3;
+const AUTO_ADVANCE_MS = 10000;
 
 export default function ProjectsSection() {
   const totalSlides = Math.ceil(projects.length / CARDS_PER_SLIDE);
@@ -52,7 +52,7 @@ export default function ProjectsSection() {
         <div className="relative">
           {/* Cards grid */}
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-opacity duration-400"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-400"
             style={{ opacity: isAnimating ? 0 : 1 }}
           >
             {visibleProjects.map((project, i) => (
