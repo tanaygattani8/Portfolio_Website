@@ -4,6 +4,7 @@ import SummarySection from "@/components/organisms/SummarySection";
 import ExperienceSection from "@/components/organisms/ExperienceSection";
 import CertificationsSection from "@/components/organisms/CertificationsSection";
 import ProjectsSection from "@/components/organisms/ProjectsSection";
+import RecommendationsSection from "@/components/organisms/RecommendationsSection";
 import ContactSection from "@/components/organisms/ContactSection";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <SummarySection />
       <ExperienceSection />
       <ProjectsSection />
+      <RecommendationsSection />
       <CertificationsSection />
       <ContactSection />
     </main>

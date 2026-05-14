@@ -42,6 +42,7 @@ export const metadata: Metadata = {
 };
 
 import BackgroundEffects from "@/components/atoms/BackgroundEffects";
+import Chatbot from "@/components/organisms/Chatbot";
 
 export default function RootLayout({
   children,
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col relative">
         <BackgroundEffects />
         {children}
+        <Chatbot />
       </body>
     </html>
   );

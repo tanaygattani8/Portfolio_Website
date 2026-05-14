@@ -102,7 +102,7 @@ export default function ContactSection() {
         {/* Footer */}
         <div className="mt-20 pt-8 border-t border-border">
           <p className="text-secondary text-xs">
-            © {new Date().getFullYear()} {profile.name}. Built with Next.js, Tailwind CSS & Framer Motion.
+            © {new Date().getFullYear()} {profile.name}.
           </p>
         </div>
       </div>
