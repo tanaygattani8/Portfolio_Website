@@ -68,7 +68,7 @@ export const profile = {
     },
     {
       company: "AlmaMeal Media Pvt. Ltd.",
-      title: "Analytics Intern",
+      title: "Data Analyst Intern",
       dates: "Sep. 2023 – Apr. 2024",
       location: "India",
       bullets: [
