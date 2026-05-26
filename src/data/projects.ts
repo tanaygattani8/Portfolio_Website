@@ -148,4 +148,34 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/tanaygattani8/Process_Capability_AI_Agent",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
   },
+  {
+    id: "payments-fraud-detection",
+    title: "Payments Fraud Detection Pipeline",
+    description:
+      "A production-grade fraud detection pipeline processing 590,000 real payment transactions from the IEEE-CIS Fraud Detection dataset. Features real-time XGBoost scoring, explainable AI (SHAP), and a GenAI investigation agent on GCP.",
+    techStack: ["GCP", "BigQuery", "dbt Core", "XGBoost", "LangGraph", "Gemini 2.0"],
+    highlights: [
+      "Achieved 0.8926 AUROC using XGBoost model on 590,000+ payment transactions",
+      "Engineered feature and data quality pipelines using dbt Core and BigQuery",
+      "Orchestrated a GenAI fraud investigation assistant using LangGraph and Gemini 2.0 Flash",
+    ],
+    category: "Machine Learning",
+    githubUrl: "https://github.com/tanaygattani8/Credit_Risk",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1d704d3?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "nexus360-salesforce-agent",
+    title: "Nexus360 — Salesforce AI Agent",
+    description:
+      "A production-grade AI agent that connects to a live Salesforce org, reasons over CRM data, searches an internal knowledge base via RAG (Qdrant), and features human-in-the-loop approvals before write operations.",
+    techStack: ["LangGraph", "FastAPI", "React", "Salesforce", "Qdrant", "Supabase", "Groq"],
+    highlights: [
+      "Built a live Salesforce connector to query accounts, cases, and opportunities in plain English",
+      "Implemented RAG-powered knowledge base search using Qdrant vector database and sentence-transformers",
+      "Orchestrated a human-in-the-loop verification mechanism pausing LLM write operations for approval",
+    ],
+    category: "Automation & AI",
+    githubUrl: "https://github.com/tanaygattani8/Nexus360",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+  },
 ];
