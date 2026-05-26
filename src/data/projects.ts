@@ -54,7 +54,37 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/tanaygattani8/Sales_Analytics",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
   },
-  // ── Slide 2: Machine Learning projects ─────────────────────────────────
+  // ── Slide 2: Machine Learning & AI Agent projects ─────────────────────────────────
+  {
+    id: "payments-fraud-detection",
+    title: "Payments Fraud Detection Pipeline",
+    description:
+      "A production-grade fraud detection pipeline processing 590,000 real payment transactions from the IEEE-CIS Fraud Detection dataset. Features real-time XGBoost scoring, explainable AI (SHAP), and a GenAI investigation agent on GCP.",
+    techStack: ["GCP", "BigQuery", "dbt Core", "XGBoost", "LangGraph", "Gemini 2.0"],
+    highlights: [
+      "Achieved 0.8926 AUROC using XGBoost model on 590,000+ payment transactions",
+      "Engineered feature and data quality pipelines using dbt Core and BigQuery",
+      "Orchestrated a GenAI fraud investigation assistant using LangGraph and Gemini 2.0 Flash",
+    ],
+    category: "Machine Learning",
+    githubUrl: "https://github.com/tanaygattani8/Credit_Risk",
+    image: "https://images.unsplash.com/photo-1563013544-aa4131650008?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "nexus360-salesforce-agent",
+    title: "Nexus360 — Salesforce AI Agent",
+    description:
+      "A production-grade AI agent that connects to a live Salesforce org, reasons over CRM data, searches an internal knowledge base via RAG (Qdrant), and features human-in-the-loop approvals before write operations.",
+    techStack: ["LangGraph", "FastAPI", "React", "Salesforce", "Qdrant", "Supabase", "Groq"],
+    highlights: [
+      "Built a live Salesforce connector to query accounts, cases, and opportunities in plain English",
+      "Implemented RAG-powered knowledge base search using Qdrant vector database and sentence-transformers",
+      "Orchestrated a human-in-the-loop verification mechanism pausing LLM write operations for approval",
+    ],
+    category: "Automation & AI",
+    githubUrl: "https://github.com/tanaygattani8/Nexus360",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+  },
   {
     id: "netflix-recommendation",
     title: "Netflix Recommendation System",
@@ -70,6 +100,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/tanaygattani8/Netflix_Recommendation_System",
     image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=800&auto=format&fit=crop",
   },
+  // ── Slide 3: More Projects & Multi-Agent Systems ────────────────────────────
   {
     id: "amazon-sentiment",
     title: "Amazon Review Sentiment Analysis",
@@ -100,7 +131,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/tanaygattani8/Data_Professional_Survey_Analysis_Dashboard_Power_BI",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
   },
-  // ── Slide 3: Automation & AI projects ────────────────────────────────────
   {
     id: "corporate-sociologist",
     title: "The Corporate Sociologist - Multi-Agent System",
@@ -117,6 +147,7 @@ export const projects: Project[] = [
       "https://github.com/tanaygattani8/The-Corporate-Sociologist-Multi-Agent-System",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
   },
+  // ── Slide 4: Automation & Collaborations ────────────────────────────────────
   {
     id: "ecommerce-agents",
     title: "Scalable Agent Collaboration for E-commerce",
@@ -147,35 +178,5 @@ export const projects: Project[] = [
     category: "Automation & AI",
     githubUrl: "https://github.com/tanaygattani8/Process_Capability_AI_Agent",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "payments-fraud-detection",
-    title: "Payments Fraud Detection Pipeline",
-    description:
-      "A production-grade fraud detection pipeline processing 590,000 real payment transactions from the IEEE-CIS Fraud Detection dataset. Features real-time XGBoost scoring, explainable AI (SHAP), and a GenAI investigation agent on GCP.",
-    techStack: ["GCP", "BigQuery", "dbt Core", "XGBoost", "LangGraph", "Gemini 2.0"],
-    highlights: [
-      "Achieved 0.8926 AUROC using XGBoost model on 590,000+ payment transactions",
-      "Engineered feature and data quality pipelines using dbt Core and BigQuery",
-      "Orchestrated a GenAI fraud investigation assistant using LangGraph and Gemini 2.0 Flash",
-    ],
-    category: "Machine Learning",
-    githubUrl: "https://github.com/tanaygattani8/Credit_Risk",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1d704d3?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "nexus360-salesforce-agent",
-    title: "Nexus360 — Salesforce AI Agent",
-    description:
-      "A production-grade AI agent that connects to a live Salesforce org, reasons over CRM data, searches an internal knowledge base via RAG (Qdrant), and features human-in-the-loop approvals before write operations.",
-    techStack: ["LangGraph", "FastAPI", "React", "Salesforce", "Qdrant", "Supabase", "Groq"],
-    highlights: [
-      "Built a live Salesforce connector to query accounts, cases, and opportunities in plain English",
-      "Implemented RAG-powered knowledge base search using Qdrant vector database and sentence-transformers",
-      "Orchestrated a human-in-the-loop verification mechanism pausing LLM write operations for approval",
-    ],
-    category: "Automation & AI",
-    githubUrl: "https://github.com/tanaygattani8/Nexus360",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
   },
 ];
