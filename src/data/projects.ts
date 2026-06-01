@@ -43,12 +43,12 @@ export const projects: Project[] = [
     id: "sales-analysis",
     title: "Regional Sales Analysis",
     description:
-      "End-to-end data pipeline in Python ingesting multi-sheet Excel data into MySQL, with 13+ exploratory analyses covering sales trends, channel distribution, and customer segmentation.",
-    techStack: ["Python", "MySQL", "Matplotlib", "Seaborn", "Plotly", "SQL"],
+      "Constructed an ETL/ELT pipeline in Python to extract a multi-sheet Excel dataset and load it into MySQL, applying data cleaning and multi-table joins to derive profit margin %, total cost and channel performance across US regions.",
+    techStack: ["Python", "SQL", "MySQL"],
     highlights: [
-      "Wholesale accounts for 54% of total sales",
-      "Export leads in profitability at 37.93% average margin",
-      "Choropleth maps for regional insights across US states",
+      "Constructed an ETL/ELT pipeline in Python to extract a multi-sheet Excel dataset and load it into MySQL, applying data cleaning and multi-table joins to derive profit margin %, total cost and channel performance across US regions",
+      "Identified that Export leads in profitability at 37.93% average margin while Wholesale drives 54% of total volume by running 13+ exploratory analyses using SQL and Python across monthly trends, product lines, customer segments",
+      "Visualized regional sales patterns using Matplotlib, Seaborn and Plotly choropleth maps, delivering channel and geographic performance insights across US states structured for stakeholder review",
     ],
     category: "Data Analytics",
     githubUrl: "https://github.com/tanaygattani8/Sales_Analytics",
@@ -59,16 +59,16 @@ export const projects: Project[] = [
     id: "payments-fraud-detection",
     title: "Payments Fraud Detection Pipeline",
     description:
-      "A production-grade fraud detection pipeline processing 590,000 real payment transactions from the IEEE-CIS Fraud Detection dataset. Features real-time XGBoost scoring, explainable AI (SHAP), and a GenAI investigation agent on GCP.",
-    techStack: ["GCP", "BigQuery", "dbt Core", "XGBoost", "LangGraph", "Gemini 2.0"],
+      "Built an end-to-end fraud detection pipeline on GCP processing 590,000 real payments transactions using BigQuery, dbt Core, and a Looker analytics dashboard, automating daily pipeline refresh via Cloud Scheduler and Cloud Functions.",
+    techStack: ["GCP", "BigQuery", "dbt", "XGBoost", "LangGraph"],
     highlights: [
-      "Achieved 0.8926 AUROC using XGBoost model on 590,000+ payment transactions",
-      "Engineered feature and data quality pipelines using dbt Core and BigQuery",
-      "Orchestrated a GenAI fraud investigation assistant using LangGraph and Gemini 2.0 Flash",
+      "Built an end-to-end fraud detection pipeline on GCP processing 590,000 real payments transactions using BigQuery, dbt Core, and a Looker analytics dashboard, automating daily pipeline refresh via Cloud Scheduler and Cloud Functions",
+      "Achieved AUROC of 0.89 on a heavily imbalanced dataset (3.5% fraud rate) by training an XGBoost classifier with SHAP explainability and scipy-based statistical feature validation, identifying velocity signals and engineered email-domain features as the top fraud predictors",
+      "Deployed a natural language fraud investigation agent using LangGraph and Gemini 2.0 Flash, enabling analysts to query and explore 590K transactions in plain English through a Streamlit dashboard backed by BigQuery",
     ],
     category: "Machine Learning",
     githubUrl: "https://github.com/tanaygattani8/Credit_Risk",
-    image: "https://images.unsplash.com/photo-1563013544-aa4131650008?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: "nexus360-salesforce-agent",
@@ -178,5 +178,19 @@ export const projects: Project[] = [
     category: "Automation & AI",
     githubUrl: "https://github.com/tanaygattani8/Process_Capability_AI_Agent",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "airbnb-seattle-analysis",
+    title: "Airbnb Seattle Market Analysis",
+    description:
+      "Designed an interactive market analysis dashboard in Tableau by joining two Excel source tables on a shared key, enabling exploratory analysis of pricing, availability, and property attributes across Seattle listings.",
+    techStack: ["Tableau", "Business Intelligence"],
+    highlights: [
+      "Designed an interactive market analysis dashboard in Tableau by joining two Excel source tables on a shared key, enabling exploratory analysis of pricing, availability, and property attributes across Seattle listings",
+      "Surfaced neighborhood-level pricing trends and seasonal availability patterns by building geospatial and time-series Tableau views, giving property owners a self-service interface for rental market intelligence",
+      "Delivered self-service business intelligence to non-technical stakeholders using dynamic Tableau filters across property type, room type, and price range, eliminating analyst dependency for routine market queries",
+    ],
+    category: "Data Analytics",
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800&auto=format&fit=crop",
   },
 ];

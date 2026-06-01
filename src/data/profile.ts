@@ -2,7 +2,6 @@ export const profile = {
   name: "Tanay Gattani",
   title: "Data Analyst · Data Engineer · Automation & AI",
   email: "tgattani@wisc.edu",
-  phone: "+1 (608)-213-8463",
   location: "Madison, WI",
   linkedin: "https://www.linkedin.com/in/tanay-gattani-5ab51220b/",
   github: "https://github.com/tanaygattani8",
@@ -15,23 +14,6 @@ export const profile = {
   ],
   aboutOutro:
     "I do my best work when there's a real business question on the other end. Not just \"build the dashboard\" but \"here's the decision we're trying to make.\" I want to own problems from the source data to the stakeholder conversation, and I'm looking for a team where both SQL and strategic thinking matter.",
-
-  education: [
-    {
-      institution: "University of Wisconsin-Madison",
-      degree: "MS in Information Science",
-      dates: "Sep. 2024 – May 2026",
-      coursework:
-        "Big Data Systems, Azure AI Foundations, Advanced Analytics, Machine Learning",
-    },
-    {
-      institution: "Mumbai University",
-      degree: "BE in Electronics, Minor: Computer Science",
-      dates: "Aug. 2019 – Jun. 2023",
-      coursework:
-        "Probability & Statistics, Database Management System, Statistical Analysis",
-    },
-  ],
 
   experience: [
     {
@@ -50,9 +32,9 @@ export const profile = {
       dates: "Sep. 2025 – Present",
       location: "Madison, WI",
       bullets: [
-        "Built a predictive modeling pipeline using XGBoost, Random Forest, and Linear Regression to forecast future retraction rates across research author clusters, achieving 0.604 R² and 0.013 MAE",
-        "Engineered 21 features integrating bibliometric indicators, knowledge graph metrics, journal-level signals and author-level attributes using Pandas and NumPy",
-        "Applied SHAP TreeExplainer analysis across Random Forest and XGBoost models, quantifying feature importance and identifying key predictors of future retractions",
+        "Developed a retraction risk forecasting pipeline across 19000+ author clusters using XGBoost and Random Forest, achieving R2 of 0.604 and MAE of 0.013 through comparative model evaluation",
+        "Engineered a 21-variable analytical dataset for statistical modeling using Python and Pandas, integrating publication history, author network signals, and journal-level features from heterogeneous sources into a single clean, analysis-ready table",
+        "Applied SHAP analysis to quantify feature importance across model outputs using Python, identifying authorship change over time as the strongest positive predicator of future retractions and translating findings into plain-language recommendations for faculty"
       ],
     },
     {
@@ -61,21 +43,38 @@ export const profile = {
       dates: "Sep. 2025 – Dec. 2025",
       location: "Madison, WI",
       bullets: [
-        "Engineered a scalable ETL/ELT pipeline in Microsoft Fabric automating ingestion of 50+ daily CSV files, eliminating 10 hours of weekly manual processing",
-        "Developed an automated data quality and governance script using PySpark that detects schema changes across 100+ monthly files, reducing manual analysis time by 95%",
-        "Built an automated enrichment pipeline integrating technical metadata with business context, delivering reporting dashboards through Delta Tables",
+        "Eliminated 10 hours of weekly manual data entry by building an ETL/ELT pipeline in Microsoft Fabric that automated ingestion of 50+ daily CSV files using Lookup activities and ForEach loops",
+        "Cut manual data validation time by 95% by automating schema change detection across 100+ monthly files using PySpark, routing anomalous records to a quarantine table before they reached reporting layers",
+        "Consolidated operational metadata and business context into a Delta Table reporting pipeline using Microsoft Fabric, powering weekly KPI dashboards reviewed by operations leadership"
       ],
     },
     {
       company: "AlmaMeal Media Pvt. Ltd.",
       title: "Data Analyst Intern",
-      dates: "Sep. 2023 – Apr. 2024",
+      dates: "Aug. 2023 – May. 2024",
       location: "India",
       bullets: [
-        "Designed and implemented a data analysis pipeline using Python and Pandas, improving customer-to-service match rates by 12%",
-        "Re-engineered 7+ legacy SQL queries by optimizing joins and indexing, cutting data retrieval times by 30%",
-        "Translated business requirements into Tableau dashboards with measurable KPIs, revealing a 40% user drop-off that drove a UI redesign",
+        "Established a customer data pipeline using Python to clean, join, and integrate records across multiple sources, improving customer-to-service match rates by 12%",
+        "Reduced query runtime by 30% and improved recommendation accuracy by 3% by refactoring 7+ legacy SQL queries using optimized joins and indexing strategies",
+        "Created user behavior KPI dashboards in Tableau to track funnel drop-off for the marketing team, surfacing a 40% abandonment rate at a critical product step that directly drove a UI redesign decision"
       ],
+    },
+  ],
+
+  education: [
+    {
+      institution: "University of Wisconsin-Madison",
+      degree: "MS in Information Science",
+      dates: "Sep. 2024 – May 2026",
+      coursework:
+        "Big Data Systems, Azure AI Foundations, Advanced Analytics, Machine Learning",
+    },
+    {
+      institution: "University of Mumbai",
+      degree: "BS in Electronics & Computer Engineering",
+      dates: "Aug. 2019 – Jun. 2023",
+      coursework:
+        "Probability & Statistics, Database Management System, Statistical Analysis",
     },
   ],
 

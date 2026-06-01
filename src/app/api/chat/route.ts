@@ -12,7 +12,7 @@ function buildContext(): string {
 Name: ${profile.name}
 Title: ${profile.title}
 Email: ${profile.email}
-Phone: ${profile.phone}
+${(profile as any).phone ? `Phone: ${(profile as any).phone}` : ""}
 Location: ${profile.location}
 LinkedIn: ${profile.linkedin}
 GitHub: ${profile.github}`);
@@ -107,11 +107,10 @@ export async function POST(request: NextRequest) {
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "AI service is not configured" },
-        { status: 500 }
-      );
+    if (!apiKey || apiKey === "your_gemini_api_key_here") {
+      return NextResponse.json({
+        reply: "Hi there! It looks like my Gemini API key is currently not configured in the `.env.local` file. Please set `GEMINI_API_KEY` to your actual API key from Google AI Studio (https://aistudio.google.com/) to start chatting with me!"
+      });
     }
 
     // Build conversation history for Gemini
