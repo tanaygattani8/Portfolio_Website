@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tanay Gattani — Portfolio
 
-## Getting Started
+Personal portfolio site for a data analyst / data engineer / AI builder. Built with
+**Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and **Framer Motion**.
 
-First, run the development server:
+## Structure
+
+- `/` — hero, about, skills, experience, featured projects, recommendations, certifications, contact
+- `/projects` — all projects with a category filter and per-project case studies (deep-linkable via `?p=<id>`)
+- Floating AI chatbot grounded on the portfolio data, answered by **Groq** (`/api/chat`)
+
+Content lives in `src/data/` (`profile.ts`, `projects.ts`, `skills.ts`, `recommendations.ts`);
+components follow atomic design under `src/components/{atoms,molecules,organisms}`.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+GROQ_API_KEY=your_key_here          # free key: https://console.groq.com/
+NEXT_PUBLIC_SITE_URL=https://your-domain.com   # optional, for OG/canonical URLs
+```
 
-## Learn More
+The chatbot degrades gracefully with a setup message if `GROQ_API_KEY` is unset.
 
-To learn more about Next.js, take a look at the following resources:
+## Assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Drop a headshot at `public/tanay.jpg` (used in the hero and as the social/OG image);
+a monogram placeholder shows if it's missing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploys on Vercel. Set `GROQ_API_KEY` (and optionally `NEXT_PUBLIC_SITE_URL`) in the project env.

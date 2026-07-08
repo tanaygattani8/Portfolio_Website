@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import SectionHeading from "../atoms/SectionHeading";
 import ScrollReveal from "../atoms/ScrollReveal";
 import { profile } from "@/data/profile";

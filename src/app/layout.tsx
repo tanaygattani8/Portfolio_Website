@@ -20,6 +20,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
+  ),
   title: "Tanay Gattani - Data Analyst & AI Agent Builder",
   description:
     "Portfolio of Tanay Gattani, a data analyst specializing in scalable analytics pipelines, predictive modeling, and multi-agent AI systems. MS in Information Science at UW-Madison.",
@@ -38,6 +42,14 @@ export const metadata: Metadata = {
     description:
       "Portfolio showcasing data analytics, engineering, and AI agent systems.",
     type: "website",
+    images: ["/tanay.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tanay Gattani - Data Analyst & AI Agent Builder",
+    description:
+      "Portfolio showcasing data analytics, engineering, and AI agent systems.",
+    images: ["/tanay.jpg"],
   },
 };
 

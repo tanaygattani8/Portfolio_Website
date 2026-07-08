@@ -5,6 +5,14 @@ export const profile = {
   location: "Madison, WI",
   linkedin: "https://www.linkedin.com/in/tanay-gattani-5ab51220b/",
   github: "https://github.com/tanaygattani8",
+  headshot: "/tanay.jpg",
+  valueProp:
+    "I build data pipelines and multi-agent AI systems that turn raw data into decisions.",
+  highlights: [
+    "MS Information Science · UW–Madison",
+    "13 projects · Data + AI",
+    "Open to full-time roles",
+  ],
   aboutIntro:
     "I'm a data professional finishing my MS in Information Science at UW-Madison (May 2026), with a background that covers both the engineering and the analytics side of data work. I build pipelines that make data reliable, and I do the analysis that makes it useful. Most of my projects have involved both.",
   aboutBullets: [

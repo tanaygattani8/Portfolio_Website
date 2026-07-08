@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { profile } from "@/data/profile";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -23,11 +24,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleClick = (href: string) => {
-    setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
+  const initials = profile.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("");
 
   return (
     <>
@@ -42,26 +42,23 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-          <button
-            onClick={() => handleClick("#home")}
+          <Link
+            href="/"
             className="text-xl font-bold font-heading tracking-wider text-accent cursor-pointer"
           >
-            {profile.name
-              .split(" ")
-              .map((n) => n[0])
-              .join("")}
-          </button>
+            {initials}
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.href}
-                onClick={() => handleClick(link.href)}
+                href={link.href}
                 className="text-xs font-medium uppercase tracking-widest text-secondary hover:text-accent transition-colors duration-300 cursor-pointer"
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
 
@@ -97,16 +94,20 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {navLinks.map((link, i) => (
-              <motion.button
+              <motion.div
                 key={link.href}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                onClick={() => handleClick(link.href)}
-                className="text-lg font-medium uppercase tracking-widest text-secondary hover:text-accent transition-colors cursor-pointer"
               >
-                {link.label}
-              </motion.button>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-lg font-medium uppercase tracking-widest text-secondary hover:text-accent transition-colors cursor-pointer"
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
           </motion.div>
         )}

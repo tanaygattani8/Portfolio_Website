@@ -12,7 +12,6 @@ function buildContext(): string {
 Name: ${profile.name}
 Title: ${profile.title}
 Email: ${profile.email}
-${(profile as any).phone ? `Phone: ${(profile as any).phone}` : ""}
 Location: ${profile.location}
 LinkedIn: ${profile.linkedin}
 GitHub: ${profile.github}`);
@@ -106,61 +105,32 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey || apiKey === "your_gemini_api_key_here") {
+    const apiKey = process.env.GROQ_API_KEY;
+    if (!apiKey || apiKey === "your_groq_api_key_here") {
       return NextResponse.json({
-        reply: "Hi there! It looks like my Gemini API key is currently not configured in the `.env.local` file. Please set `GEMINI_API_KEY` to your actual API key from Google AI Studio (https://aistudio.google.com/) to start chatting with me!"
+        reply: "Hi there! It looks like my Groq API key isn't configured yet. Set `GROQ_API_KEY` in `.env.local` (grab a free key at https://console.groq.com/) to start chatting with me!"
       });
     }
 
-    // Build conversation history for Gemini
-    const contents = messages.map(
-      (msg: { role: string; content: string }) => ({
-        role: msg.role === "assistant" ? "model" : "user",
-        parts: [{ text: msg.content }],
-      })
-    );
-
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          system_instruction: {
-            parts: [{ text: SYSTEM_PROMPT }],
-          },
-          contents,
-          generationConfig: {
-            temperature: 0.3,
-            maxOutputTokens: 512,
-            topP: 0.8,
-          },
-          safetySettings: [
-            {
-              category: "HARM_CATEGORY_HARASSMENT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE",
-            },
-            {
-              category: "HARM_CATEGORY_HATE_SPEECH",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE",
-            },
-            {
-              category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE",
-            },
-            {
-              category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE",
-            },
-          ],
-        }),
-      }
-    );
+    // Groq is OpenAI-compatible; client messages already use {role, content}.
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        temperature: 0.3,
+        max_tokens: 512,
+        top_p: 0.8,
+        messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages],
+      }),
+    });
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => null);
-      console.error("Gemini API error:", response.status, errorData);
+      console.error("Groq API error:", response.status, errorData);
       return NextResponse.json(
         { error: "Failed to get response from AI" },
         { status: 502 }
@@ -169,7 +139,7 @@ export async function POST(request: NextRequest) {
 
     const data = await response.json();
     const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+      data?.choices?.[0]?.message?.content ||
       "I'm sorry, I couldn't generate a response. Please try again.";
 
     return NextResponse.json({ reply });
