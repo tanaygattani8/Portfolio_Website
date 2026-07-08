@@ -1,13 +1,14 @@
 export const profile = {
   name: "Tanay Gattani",
   title: "Data Analyst · Data Engineer · Automation & AI",
-  email: "tgattani@wisc.edu",
+  email: "tanaygattani8@gmail.com",
   location: "Madison, WI",
   linkedin: "https://www.linkedin.com/in/tanay-gattani-5ab51220b/",
   github: "https://github.com/tanaygattani8",
   headshot: "/tanay.jpg",
-  valueProp:
-    "I build data pipelines and multi-agent AI systems that turn raw data into decisions.",
+  resumeUrl: "/resume.pdf",
+  heroAbout:
+    "I'm a data professional finishing my MS in Information Science at UW–Madison, working across the full stack of data — the pipelines that make it reliable, the analysis that makes it useful, and the AI agents that put it to work. I like owning problems end to end, from raw source data to the decision on the other side.",
   highlights: [
     "MS Information Science · UW–Madison",
     "13 projects · Data + AI",

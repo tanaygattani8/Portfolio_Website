@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import GoldButton from "../atoms/GoldButton";
 import { profile } from "@/data/profile";
@@ -11,7 +10,7 @@ import Typewriter from "../atoms/Typewriter";
 const fade = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] as const },
+  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const },
 });
 
 export default function HeroSection() {
@@ -24,35 +23,41 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden px-6 pt-24 pb-16"
+      className="relative min-h-screen flex items-center overflow-hidden px-6 pt-28 pb-16"
     >
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
         {/* Left: text */}
         <div className="text-center lg:text-left order-2 lg:order-1">
           <motion.h1
-            {...fade(0.2)}
-            className="text-5xl sm:text-6xl md:text-7xl font-bold font-heading tracking-tight text-foreground leading-[1.05]"
+            {...fade(0.15)}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold font-heading tracking-tight text-foreground leading-[1.05]"
           >
             {profile.name}
           </motion.h1>
 
-          <motion.div {...fade(0.4)} className="mt-6 flex justify-center lg:justify-start">
+          <motion.div {...fade(0.3)} className="mt-5 flex justify-center lg:justify-start">
             <Typewriter />
           </motion.div>
 
           <motion.p
-            {...fade(0.55)}
-            className="mt-6 text-secondary text-lg leading-relaxed max-w-xl mx-auto lg:mx-0"
+            {...fade(0.45)}
+            className="mt-6 text-secondary text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0"
           >
-            {profile.valueProp}
+            {profile.heroAbout}
           </motion.p>
 
           <motion.div
-            {...fade(0.7)}
-            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+            {...fade(0.6)}
+            className="mt-8 flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start items-center"
           >
             <GoldButton variant="filled" href="/projects">
               View Projects
+            </GoldButton>
+            <GoldButton variant="outlined" href={profile.resumeUrl} download>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Resume
             </GoldButton>
             <GoldButton variant="outlined" href="#contact">
               Get in Touch
@@ -61,7 +66,7 @@ export default function HeroSection() {
 
           {/* Highlights */}
           <motion.ul
-            {...fade(0.85)}
+            {...fade(0.75)}
             className="mt-8 flex flex-wrap gap-x-6 gap-y-2 justify-center lg:justify-start text-sm text-secondary"
           >
             {profile.highlights.map((h) => (
@@ -74,7 +79,7 @@ export default function HeroSection() {
 
           {/* Social links */}
           <motion.div
-            {...fade(1)}
+            {...fade(0.9)}
             className="mt-6 flex gap-5 justify-center lg:justify-start text-secondary"
           >
             <a href={profile.linkedin} aria-label="LinkedIn" className="hover:text-accent transition-colors">
@@ -97,25 +102,26 @@ export default function HeroSection() {
 
         {/* Right: photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="order-1 lg:order-2 flex justify-center"
         >
-          <div className="relative w-64 h-80 sm:w-80 sm:h-96">
-            <div className="absolute -inset-4 bg-blue-400/10 blur-3xl rounded-full" />
+          <div className="relative w-72 h-[24rem] sm:w-80 sm:h-[26rem] lg:w-[27rem] lg:h-[33rem]">
+            <div className="absolute -inset-6 bg-blue-400/10 blur-3xl rounded-full" />
             {imgOk ? (
               <Image
                 src={profile.headshot}
                 alt={profile.name}
                 fill
                 priority
+                sizes="(max-width: 1024px) 20rem, 27rem"
                 onError={() => setImgOk(false)}
                 className="relative object-cover rounded-3xl border border-border shadow-2xl shadow-black/10"
               />
             ) : (
               <div className="relative w-full h-full rounded-3xl border border-border shadow-2xl shadow-black/10 bg-surface flex items-center justify-center">
-                <span className="text-6xl font-bold font-heading text-accent">{initials}</span>
+                <span className="text-7xl font-bold font-heading text-accent">{initials}</span>
               </div>
             )}
           </div>
@@ -123,7 +129,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <Link
+      <a
         href="#about"
         aria-label="Scroll to content"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
@@ -135,7 +141,7 @@ export default function HeroSection() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-accent" />
         </motion.div>
-      </Link>
+      </a>
     </section>
   );
 }

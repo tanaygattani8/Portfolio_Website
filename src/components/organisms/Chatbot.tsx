@@ -85,7 +85,7 @@ export default function Chatbot() {
         id: (Date.now() + 1).toString(),
         role: "assistant",
         content:
-          "Sorry, I'm having trouble connecting right now. You can reach Tanay directly at tgattani@wisc.edu!",
+          "Sorry, I'm having trouble connecting right now. You can reach Tanay directly at tanaygattani8@gmail.com!",
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
