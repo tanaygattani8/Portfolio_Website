@@ -21,12 +21,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "clinical-ops-copilot",
-    title: "Clinical Operations Copilot — Multi-Agent System",
+    title: "Clinical Operations Copilot - Multi-Agent System",
     description:
-      "An auditable multi-agent system that turns a clinic-network data warehouse into compliance-safe executive briefs — surfacing operational issues and quantifying their financial impact without ever exposing patient-level data.",
+      "An auditable multi-agent system that turns a clinic-network data warehouse into compliance-safe executive briefs, surfacing operational issues and quantifying their financial impact without ever exposing patient-level data.",
     techStack: ["Google ADK", "MCP", "Python", "FastAPI", "DuckDB", "Groq", "Docker"],
     highlights: [
-      "Multi-agent guardrail architecture — separate screening, analytics, simulation, and reporting agents with independent verification",
+      "Multi-agent guardrail architecture: separate screening, analytics, simulation, and reporting agents with independent verification",
       "Compliance-first by design: enforces 5+ record aggregation minimums and blocks individual patient queries",
       "Deterministic groundedness check re-verifies every figure in SQL (no LLM grading itself), with a live audit-trail dashboard",
       "What-if simulation to test intervention ROI before committing resources, over a 7-year / 12-clinic synthetic warehouse",
@@ -39,13 +39,13 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800&auto=format&fit=crop",
     caseStudy: {
       problem:
-        "Regional clinic managers had no fast way to surface operational problems buried across thousands of daily rows — and any tool touching the data had to respect patient privacy while producing numbers leadership could trust.",
+        "Regional clinic managers had no fast way to surface operational problems buried across thousands of daily rows, and any tool touching the data had to respect patient privacy while producing numbers leadership could trust.",
       approach:
         "A guardrailed multi-agent system on Google ADK + MCP: an orchestrator routes screened requests to specialized agents (analytics, simulation, reporting) backed by three MCP tool servers over a DuckDB warehouse. Every output passes an independent, deterministic SQL groundedness check before it's logged and delivered.",
       contribution:
         "Designed the agent topology and the compliance guardrail (5+ record aggregation floor, no patient-level queries), built the deterministic verification layer so no figure is ever LLM-graded, and shipped the live audit-trail dashboard on Hugging Face Spaces.",
       results:
-        "Executives get decision-ready, financially-quantified briefs with a visible verification score and full agent trace — and a zero-cost SQL anomaly loop only wakes the agents when something actually looks off.",
+        "Executives get decision-ready, financially-quantified briefs with a visible verification score and full agent trace, and a zero-cost SQL anomaly loop only wakes the agents when something actually looks off.",
     },
   },
   {
@@ -111,18 +111,18 @@ export const projects: Project[] = [
     metric: "AUROC 0.89 · 590K txns",
     caseStudy: {
       problem:
-        "A payments dataset of 590,000 transactions with only a 3.5% fraud rate — a heavily imbalanced problem where naive models look accurate while missing the fraud that matters, and analysts had no way to explore flagged cases themselves.",
+        "A payments dataset of 590,000 transactions with only a 3.5% fraud rate, a heavily imbalanced problem where naive models look accurate while missing the fraud that matters, and analysts had no way to explore flagged cases themselves.",
       approach:
         "An end-to-end pipeline on GCP: BigQuery + dbt Core for modeling, an XGBoost classifier with SHAP explainability and scipy-based statistical feature validation, a Looker dashboard, and daily refresh via Cloud Scheduler + Cloud Functions.",
       contribution:
         "Engineered the features (velocity signals, email-domain features), tuned the model against the imbalance, and built a LangGraph + Gemini natural-language investigation agent so analysts can query 590K transactions in plain English from a Streamlit app.",
       results:
-        "Reached AUROC 0.89 on the imbalanced set, with SHAP identifying velocity and engineered email-domain features as the top fraud predictors — and a self-serve NL agent that removed the analyst bottleneck.",
+        "Reached AUROC 0.89 on the imbalanced set, with SHAP identifying velocity and engineered email-domain features as the top fraud predictors, plus a self-serve NL agent that removed the analyst bottleneck.",
     },
   },
   {
     id: "nexus360-salesforce-agent",
-    title: "Nexus360 — Salesforce AI Agent",
+    title: "Nexus360 - Salesforce AI Agent",
     description:
       "A production-grade AI agent that connects to a live Salesforce org, reasons over CRM data, searches an internal knowledge base via RAG (Qdrant), and features human-in-the-loop approvals before write operations.",
     techStack: ["LangGraph", "FastAPI", "React", "Salesforce", "Qdrant", "Supabase", "Groq"],
@@ -138,13 +138,13 @@ export const projects: Project[] = [
     metric: "Live CRM · RAG · HITL",
     caseStudy: {
       problem:
-        "Sales teams sit on CRM data and internal knowledge that's slow to query, and letting an LLM act on a live Salesforce org is risky — you can't have a model silently writing to production records.",
+        "Sales teams sit on CRM data and internal knowledge that's slow to query, and letting an LLM act on a live Salesforce org is risky: you can't have a model silently writing to production records.",
       approach:
         "A production-grade agent on LangGraph + FastAPI with a React front end: a live Salesforce connector for accounts, cases, and opportunities; a Qdrant + sentence-transformers RAG layer over an internal knowledge base; and a human-in-the-loop gate on every write.",
       contribution:
         "Built the Salesforce connector and the RAG search, and designed the human-in-the-loop verification mechanism that pauses any LLM write operation for explicit approval before it touches the org.",
       results:
-        "Users query CRM data and internal docs in plain English and get grounded answers, while every state-changing action stays gated behind human approval — safe automation over a live system.",
+        "Users query CRM data and internal docs in plain English and get grounded answers, while every state-changing action stays gated behind human approval, safe automation over a live system.",
     },
   },
   {

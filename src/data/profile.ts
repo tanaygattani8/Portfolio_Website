@@ -8,7 +8,7 @@ export const profile = {
   headshot: "/tanay.jpg",
   resumeUrl: "/resume.pdf",
   heroAbout:
-    "I'm a data professional finishing my MS in Information Science at UW–Madison, working across the full stack of data — the pipelines that make it reliable, the analysis that makes it useful, and the AI agents that put it to work. I like owning problems end to end, from raw source data to the decision on the other side.",
+    "I'm a data professional finishing my MS in Information Science at UW–Madison, working across the full stack of data: the pipelines that make it reliable, the analysis that makes it useful, and the AI agents that put it to work. I like owning problems end to end, from raw source data to the decision on the other side.",
   highlights: [
     "MS Information Science · UW–Madison",
     "13 projects · Data + AI",
@@ -27,16 +27,6 @@ export const profile = {
   experience: [
     {
       company: "University of Wisconsin-Madison",
-      title: "Project Assistant",
-      dates: "Mar. 2026 – Present",
-      location: "Madison, WI",
-      bullets: [
-        "Graded moral analysis essays for LIS 461: Data Ethics & Algorithms taught by Professor Ian Hutchins, applying the Rubel-Castro heuristic to evaluate arguments across consequentialist, Kantian, and rights-based frameworks",
-        "Assessed student work for conceptual clarity, factual accuracy, and depth of critical reflection on automated decision systems and fairness in algorithmic contexts"
-      ],
-    },
-    {
-      company: "University of Wisconsin-Madison",
       title: "Graduate Research Assistant",
       dates: "Sep. 2025 – Present",
       location: "Madison, WI",
@@ -44,6 +34,16 @@ export const profile = {
         "Developed a retraction risk forecasting pipeline across 19000+ author clusters using XGBoost and Random Forest, achieving R2 of 0.604 and MAE of 0.013 through comparative model evaluation",
         "Engineered a 21-variable analytical dataset for statistical modeling using Python and Pandas, integrating publication history, author network signals, and journal-level features from heterogeneous sources into a single clean, analysis-ready table",
         "Applied SHAP analysis to quantify feature importance across model outputs using Python, identifying authorship change over time as the strongest positive predicator of future retractions and translating findings into plain-language recommendations for faculty"
+      ],
+    },
+    {
+      company: "University of Wisconsin-Madison",
+      title: "Project Assistant",
+      dates: "Mar. 2026 – May 2026",
+      location: "Madison, WI",
+      bullets: [
+        "Graded moral analysis essays for LIS 461: Data Ethics & Algorithms taught by Professor Ian Hutchins, applying the Rubel-Castro heuristic to evaluate arguments across consequentialist, Kantian, and rights-based frameworks",
+        "Assessed student work for conceptual clarity, factual accuracy, and depth of critical reflection on automated decision systems and fairness in algorithmic contexts"
       ],
     },
     {
@@ -103,7 +103,7 @@ export const profile = {
     {
       title: "Data Analyst",
       description:
-        "Transitioned into analytics — building ETL pipelines, dashboards, and predictive models.",
+        "Transitioned into analytics, building ETL pipelines, dashboards, and predictive models.",
       isCurrent: false,
     },
     {

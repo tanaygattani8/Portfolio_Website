@@ -5,7 +5,7 @@ import SectionHeading from "@/components/atoms/SectionHeading";
 import ProjectsExplorer from "@/components/organisms/ProjectsExplorer";
 
 export const metadata: Metadata = {
-  title: "Projects — Tanay Gattani",
+  title: "Projects | Tanay Gattani",
   description:
     "Data engineering, analytics, machine learning, and AI agent projects by Tanay Gattani, with case studies.",
 };

@@ -23,7 +23,7 @@ export default function Chatbot() {
       id: "welcome",
       role: "assistant",
       content:
-        "Hi! I'm Tanay's portfolio assistant. Ask me anything about his experience, projects, skills, or education — I'll answer based on what I know about him.",
+        "Hi! I'm Tanay's portfolio assistant. Ask me anything about his experience, projects, skills, or education. I'll answer based on what I know about him.",
     },
   ]);
   const [input, setInput] = useState("");
