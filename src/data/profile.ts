@@ -38,7 +38,7 @@ export const profile = {
     },
     {
       company: "University of Wisconsin-Madison",
-      title: "Project Assistant",
+      title: "Graduate Teaching Assistant",
       dates: "Mar. 2026 – May 2026",
       location: "Madison, WI",
       bullets: [
@@ -59,8 +59,8 @@ export const profile = {
     },
     {
       company: "AlmaMeal Media Pvt. Ltd.",
-      title: "Data Analyst Intern",
-      dates: "Aug. 2023 – May. 2024",
+      title: "Data Analyst",
+      dates: "Jul. 2023 – Jul. 2024",
       location: "India",
       bullets: [
         "Established a customer data pipeline using Python to clean, join, and integrate records across multiple sources, improving customer-to-service match rates by 12%",
