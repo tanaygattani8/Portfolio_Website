@@ -133,6 +133,7 @@ export const projects: Project[] = [
     ],
     category: "Automation & AI",
     githubUrl: "https://github.com/tanaygattani8/Nexus360",
+    demoUrl: "https://nexus360-26bg.onrender.com/",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
     featured: true,
     metric: "Live CRM · RAG · HITL",
