@@ -6,7 +6,7 @@ interface BadgeProps {
 export default function Badge({ label, variant = "default" }: BadgeProps) {
   const variants = {
     default:
-      "bg-white/5 text-secondary border border-border hover:border-accent/40 hover:text-white",
+      "bg-white/5 text-secondary border border-border hover:border-accent/40 hover:text-foreground",
     accent:
       "bg-accent/10 text-accent border border-accent/30",
   };
